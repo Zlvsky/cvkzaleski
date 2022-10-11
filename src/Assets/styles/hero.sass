@@ -1,4 +1,60 @@
 #hero 
-    width: 200px
-    height: 200px
-    background-color: #2e2e2e
+    height: 100vh
+    overflow: hidden
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    flex-direction: column
+    -ms-flex-align: center
+    
+    .heroMain
+        height: inherit
+        display: flex
+        align-items: center
+        justify-content: space-between
+    .hero-bottom
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-bottom: 40px
+        width: inherit
+        .scrollDown
+            -webkit-animation-name: bounce
+            animation-name: bounce
+            -webkit-animation-timing-function: linear
+            animation-timing-function: linear
+            -webkit-animation-duration: 3s
+            animation-duration: 3s
+            -webkit-animation-iteration-count: infinite
+            animation-iteration-count: infinite
+            .scrollArrow
+                height: 80px
+        .heroSocialMedia
+            display: flex
+            flex-direction: row
+            align-items: end 
+            .socialMediaCircle
+                background-color: #EF5F63
+                margin: 0 10px
+                width: 33px
+                height: 33px
+                border-radius: 50%  
+                display: flex
+                justify-content: center
+                align-items: center
+                img
+                    height: 22px
+
+.Title-mask
+    display: block
+    position: relative
+    text-align: start
+    overflow: hidden
+
+.Title-line
+    display: inline-block
+    opacity: 0
+    transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0)
+    will-change: opacity, transform
+    animation: revealText 1s cubic-bezier(0.7, 0, 0.3, 1) forwards
+
