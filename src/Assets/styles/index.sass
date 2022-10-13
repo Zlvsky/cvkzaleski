@@ -30,7 +30,6 @@
   font-weight: normal
   
 body 
-  max-width: 1600px
   margin: 0 auto
   font-family: 'Inter'
   -webkit-font-smoothing: antialiased
@@ -45,6 +44,7 @@ code
 
 nav
   position: fixed
+  margin: 0 auto
   width: 100%
   max-width: 1600px
   display: flex
@@ -55,6 +55,10 @@ nav
   #navigation
     display: flex
     align-items: center
+    .activeSection
+      color: #fff
+    .unactiveSection
+      color: #626262
     span
       margin: 0 22px
       height: fit-content
@@ -62,13 +66,11 @@ nav
  
 .flexContainer
 
-.section-full
-  min-height: 100vh
-  position: relative
-  opacity: 0
-  -webkit-transition: opacity 0.4s
-  -o-transition: opacity 0.4s
-  transition: opacity 0.4s
+.sectionContent
+  max-width: 1600px
+  width: 100%
+  margin: 0 auto
+  height: inherit
 
 h1
   color: #fff

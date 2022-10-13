@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNav } from '../Hooks/useNav';
 import "../Assets/styles/hero.sass";
 import hireMeGif from './../Assets/images/hireme.gif';
 import arrow from "./../Assets/images/arrow.png";
@@ -8,6 +9,8 @@ import linkedin from "./../Assets/images/linkedin.png";
 import web from "./../Assets/images/web.png";
 
 function Hero() {
+    const heroRef = useNav("Home")
+
     const AnimatedSpan = () => {
         const heroText = ["Hello," , "I'm Chris,", "newbie web developer"];
         const smallLine = "Front End / Wordpress developer";
@@ -94,8 +97,8 @@ function Hero() {
     }
 
     return (
-      <div id="hero" className="">
-        <div className="heroMain">
+      <div id="hero" className="" ref={heroRef}>
+        <div className="sectionContent heroMain">
           <AnimatedSpan />
           <GifComponent />
         </div>

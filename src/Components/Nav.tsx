@@ -1,5 +1,6 @@
-import React, {useState, FC} from 'react';
+import React, {useState, useContext, FC} from 'react';
 import logo from './../Assets/images/zaleski logo obrys.png';
+import { NavContext } from './NavProvider';
 
 const navLinks = [
     {navLinkId: "Home", scrollToId: "hero"},
@@ -8,7 +9,6 @@ const navLinks = [
     {navLinkId: "Contact", scrollToId: "contact"},
 ]
 
-
 interface Props {
     navLinkId: string
     scrollToId: string
@@ -16,9 +16,10 @@ interface Props {
     setActiveLinkId: any
 }
 
-const NavLink: FC<Props> = ({ navLinkId, scrollToId, activeNavLinkId, setActiveLinkId}) => {
+const NavLink: FC<Props> = ({ navLinkId, scrollToId}) => {
+    const { activeNavLinkId, setActiveNavLinkId } = useContext(NavContext);
     const handleClick = () => {
-        setActiveLinkId(navLinkId);
+        setActiveNavLinkId(navLinkId);
         document.getElementById(scrollToId)?.scrollIntoView({
             behavior: 'smooth',
         });
@@ -27,7 +28,7 @@ const NavLink: FC<Props> = ({ navLinkId, scrollToId, activeNavLinkId, setActiveL
     return (
         <span
             id="navLinkId"
-            className={activeNavLinkId === navLinkId ? 'activeClass' : ''}
+            className={activeNavLinkId === navLinkId ? ' activeSection' : 'unactiveSection'}
             onClick={handleClick}
             >
                 {navLinkId}
