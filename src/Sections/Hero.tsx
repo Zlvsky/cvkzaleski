@@ -8,49 +8,44 @@ import github from "./../Assets/images/github.png";
 import linkedin from "./../Assets/images/linkedin.png";
 import web from "./../Assets/images/web.png";
 
+
+const AnimatedSpan = () => {
+  const heroText = ["Hello,", "I'm Chris,", "newbie web developer"];
+  const smallLine = "Front End / Wordpress developer";
+
+  return (
+    <div id="heroContainer" className="text-zone">
+      <div className="heroAnimation">
+        <h1 className="block">
+        {heroText.map((val, index) => {
+          return (
+            <span className="Title-mask">
+              <span
+                className="Title-line"
+                style={{ animationDelay: `${0.5 * index}s` }}
+              >
+                {val}
+              </span>
+            </span>
+          );
+        })}
+      </h1>
+        <span className="commentStyle grey-text reveal">{smallLine}</span>
+      </div>
+    </div>
+  );
+};
+
+const GifComponent = () => {
+  return (
+    <div id="gifContainer" className="mediaContainer">
+      <img src={hireMeGif} alt="" className="revealImage" />
+    </div>
+  );
+};
+
 function Hero() {
     const heroRef = useNav("Home")
-
-    const AnimatedSpan = () => {
-        const heroText = ["Hello," , "I'm Chris,", "newbie web developer"];
-        const smallLine = "Front End / Wordpress developer";
-
-        const AnimateSplittedWords = () => {
-            return (
-              <h1 className="block">
-                {heroText.map((val, index) => {
-                  return (
-                    <span className="Title-mask">
-                      <span
-                        className="Title-line"
-                        style={{ animationDelay: `${.5 * index}s` }}
-                      >
-                        {val}
-                      </span>
-                    </span>
-                  );
-                })}
-              </h1>
-            );
-        }
-
-        return (
-          <div id="heroContainer" className="text-zone">
-            <div className="heroAnimation">
-                <AnimateSplittedWords />
-              <span className="commentStyle grey-text reveal">{smallLine}</span>
-            </div>
-          </div>
-        );
-    }
-
-    const GifComponent = () => {
-        return (
-            <div id="gifContainer" className="mediaContainer">
-                <img src={hireMeGif} alt="" className="revealImage"/>
-            </div>
-        )
-    }
 
     const HeroBottomContent = () => {
         return (
