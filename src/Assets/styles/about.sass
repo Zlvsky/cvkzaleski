@@ -4,6 +4,45 @@
     display: -webkit-box
     display: -ms-flexbox
     display: flex
-    flex-direction: column
     -ms-flex-align: center
     background-color: #FFE99A
+    .aboutMain 
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+
+.aboutCardsContainer
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    .aboutCard
+        position: relative
+        width: 310px
+        height: 430px
+        margin: 0 40px
+        border-bottom-left-radius: 30px
+        border-bottom-right-radius: 30px
+        -webkit-box-shadow: 0px 0px 30px -15px rgba(66, 68, 90, 1)
+        -moz-box-shadow: 0px 0px 30px -15px rgba(66, 68, 90, 1)
+        box-shadow: 0px 0px 30px -15px rgba(66, 68, 90, 1)
+        .cardImage
+            width: 100%
+            height: 280px
+            img
+                object-fit: cover
+        .cardDescription
+            position: absolute
+            background-color: #FFF6DB
+            width: 100%
+            height: 230px
+            border-bottom-left-radius: 30px
+            border-bottom-right-radius: 30px
+            border-top-left-radius: 84px
+            left: 0
+            bottom: 0
+            .cardDescriptionContent
+                color: #000
+                padding: 60px 20px
