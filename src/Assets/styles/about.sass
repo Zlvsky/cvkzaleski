@@ -1,3 +1,8 @@
+@mixin revealAnimation
+    opacity: 0
+    animation: revealImage 0.5s ease-in-out forwards
+
+    
 #about 
     height: 100vh
     overflow: hidden
@@ -5,6 +10,8 @@
     display: -ms-flexbox
     display: flex
     -ms-flex-align: center
+    justify-content: center
+    align-items: center
     background-color: #FFE99A
     .aboutMain 
         display: flex
@@ -13,36 +20,70 @@
         align-items: center
 
 
-.aboutCardsContainer
+.sliderContainer
     position: relative
     display: flex
     flex-direction: row
     justify-content: space-between
-    .aboutCard
-        position: relative
-        width: 310px
-        height: 430px
-        margin: 0 40px
-        border-bottom-left-radius: 30px
-        border-bottom-right-radius: 30px
-        -webkit-box-shadow: 0px 0px 30px -15px rgba(66, 68, 90, 1)
-        -moz-box-shadow: 0px 0px 30px -15px rgba(66, 68, 90, 1)
-        box-shadow: 0px 0px 30px -15px rgba(66, 68, 90, 1)
-        .cardImage
-            width: 100%
-            height: 280px
-            img
-                object-fit: cover
-        .cardDescription
-            position: absolute
-            background-color: #FFF6DB
-            width: 100%
-            height: 230px
-            border-bottom-left-radius: 30px
-            border-bottom-right-radius: 30px
-            border-top-left-radius: 84px
-            left: 0
-            bottom: 0
-            .cardDescriptionContent
-                color: #000
-                padding: 60px 20px
+    max-width: 1200px
+    color: #151515
+    .slide-active
+
+    .slide
+        .slideWrap
+            display: flex
+            flex-direction: row
+            &::after
+               content: ''
+               position: absolute
+               bottom: 0
+               left: 0
+               width: 68%
+               height: 1px
+               background-color: #151515
+            .slideLeft
+                display: flex
+                flex-direction: column
+                padding-right: 180px
+                .slideIcons
+                    display: flex
+                    flex-direction: row
+                    .slideIcon
+                        margin-right: 20px
+                        height: 30px
+                        width: 30px
+                        text-align: center
+                        padding: 4px 5px
+                        border: 1px solid #151515
+                        border-radius: 50%
+                        cursor: pointer
+                        transition: border-color 0.2s ease-in-out
+                        &:hover
+                          border-color: #EF5F63  
+                    .activeSlideIcon
+                        border-color: #EF5F63
+                .slideHeader
+                    font-weight: bold
+                    font-size: 50px
+                    margin: 10px 0 15px 0
+                    @include revealAnimation
+                    animation-delay: 0.1s
+                .slideShortDescription
+                    font-size: 26px
+                    margin-bottom: 20px
+                    @include revealAnimation
+                    animation-delay: 0.3s
+                .slideDescription
+                    font-size: 18px
+                    margin-bottom: 20px
+                    @include revealAnimation
+                    animation-delay: 0.5s
+            .slideRight
+                width: 420px
+                height: 420px
+                img
+                    @include revealAnimation
+                    animation-delay: 0.7s
+                    border-radius: 40px
+                    margin: 0
+                    padding: 0
