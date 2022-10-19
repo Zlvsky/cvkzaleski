@@ -1,4 +1,4 @@
-import React, { useState, useContext, FC } from "react";
+import React, { useState, useContext, FC, useEffect } from "react";
 import logo from "./../Assets/images/zaleski logo obrys.png";
 import "../Assets/styles/nav.sass";
 import { NavContext } from "./NavProvider";
@@ -42,13 +42,37 @@ const NavLink: FC<Props> = ({ navLinkId, scrollToId }) => {
 const Nav = () => {
   const [activeNavLinkId, setActiveNavLinkId] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      if(window.scrollY > lastScrollY) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  }
 
   const handleOnClick = () => {
     menuOpen ? setMenuOpen(false) : setMenuOpen(true);
   };
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+
+      // cleanup function
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
-    <nav>
+    <nav className={showNavbar ? "navbarShow" : "navbarHidden"}>
       <div id="logo">
         <img src={logo} alt="logo" height="40" />
       </div>
