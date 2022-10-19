@@ -1,22 +1,24 @@
 #projects
-    height: 100vh
+    height: auto
     overflow: hidden
     display: -webkit-box
     display: -ms-flexbox
     display: flex
     flex-direction: column
     -ms-flex-align: center
+    .techHeader
+        font-size: 50px
     .techWrap
         display: flex
         flex-direction: row
         justify-content: center
         align-items: center
+        margin-top: 150px
         .techLeft
             display: flex
             flex-direction: column
             width: 50%
-            .techHeader
-                font-size: 50px
+            
             .techTitle 
                 text-align: left
                 color: #dbdbdb
@@ -51,3 +53,155 @@
                 object-fit: contain
                 animation: revealImage 0.2s ease-in-out forwards
                 animation-delay: 1s
+
+
+.portfolioWrap
+    margin-top: 150px
+    
+.allProjects
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    max-width: 1024px
+    margin: 0 auto
+.singleProjectWrap
+    position: relative
+    display: grid
+    gap: 10px
+    grid-template-columns: repeat(12, 1fr)
+    margin-top: 60px
+    margin-bottom: 100px
+    &:nth-of-type(2n+1)
+        .projectContent
+            grid-column: 5 / -1
+            text-align: right
+            .projectTech
+                justify-content: end
+            .projectLinks
+                justify-content: flex-end
+        .projectImage
+            grid-column: 1 / 8
+        
+    .projectContent
+        grid-column: 1 / 9
+        grid-area: 1 / 1 / -1 / 7
+        text-align: left
+        .projectType
+            margin: 10px 0
+            color: #EF5F63
+            font-size: 15px
+            font-weight: 400
+        .projectTitle
+            margin: 0 0 20px
+            font-size: clamp(24px, 5vw, 28px)
+        .projectDescriptionWrap
+            box-shadow: 0 10px 30px -15px #020c1bb3
+            position: relative
+            z-index: 2
+            padding: 25px
+            border-radius: 4px
+            background-color: #222325
+            color: #fff
+            font-size: 18px
+        .projectTech
+            display: flex
+            flex-wrap: wrap
+            position: relative
+            z-index: 2
+            margin: 25px 0px 10px
+            padding: 0
+            justify-content: start
+            .projectSingleTech
+                margin: 0 0 5px 20px
+                font-size: 14px
+                white-space: nowrap
+                color: #b4b4b4
+        .projectLinks
+            display: flex
+            align-items: center
+            position: relative
+            margin-top: 10px
+            margin-left: 0
+            margin-right: -10px
+            justify-content: flex-start
+            a
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 10px
+                z-index: 1
+                svg
+                    width: 20px
+                    height: 20px
+                    stroke: white
+    .projectImage
+        position: relative
+        grid-area: 1 / 6 / -1 / -1
+        z-index: 1
+        img
+            position: absolute
+            bottom: 0
+            height: auto
+            width: 100%
+            left: 0
+            margin: 0
+            max-width: none
+            padding: 0
+            right: 0
+            top: 0
+            object-fit: cover
+
+.websitesWrap
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    margin: 0 auto
+    height: inherit
+    .websiteBox
+        width: 16.33%
+        position: relative
+        &:hover
+            .websiteBoxContent
+                .siteLink
+                    opacity: 1
+                    -webkit-transform: scale(0.6)
+                    -ms-transform: scale(0.6)
+                    transform: scale(0.6)
+        &::after
+            content: ""
+            display: block
+            padding-bottom: 100%
+        .websiteBoxContent
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            margin: auto
+            background-color: #00000080
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            -webkit-transition: background-color 0.1s linear
+            -ms-transition: background-color 0.1s linear
+            transition: background-color 0.1s linear
+            &:hover
+                background-color: transparent
+            .siteLink
+                display: block
+                position: absolute
+                background-repeat: no-repeat
+                background-position: center
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                z-index: 9
+                opacity: 0
+                -webkit-transition: all 150ms ease-out
+                -o-transition: all 150ms ease-out
+                transition: all 150ms ease-out
+                -webkit-transform: scale(0.2)
+                -ms-transform: scale(0.2)
+                transform: scale(0.2)
