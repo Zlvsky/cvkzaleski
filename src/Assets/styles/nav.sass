@@ -1,0 +1,144 @@
+$xs: "(max-width: 890px)"
+
+nav
+    position: fixed
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    z-index: 10
+    #logo
+        margin: 10px 22px
+    #navigation
+        display: flex
+        align-items: center
+        .activeSection
+            color: #fff
+        .unactiveSection
+            color: #626262
+        span
+            margin: 0 22px
+            height: fit-content
+            cursor: pointer
+    #menu
+        display: none
+
+@media screen and #{$xs}
+    nav
+        #navigation
+            display: none
+        #menu
+            display: block
+            .hamMenu.hamMenuOpen
+                .hamBox
+                    .hamBoxInner
+                        transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s
+                        transform: rotate(225deg)
+                        &::before
+                            top: 0px
+                            opacity: 0
+                            &::after
+                                transform: rotate(-90deg)
+                                bottom: 0
+            .hamMenu
+                display: flex
+                -webkit-box-pack: center
+                justify-content: center
+                -webkit-box-align: center
+                align-items: center
+                position: relative
+                z-index: 10
+                margin-right: -15px
+                padding: 15px
+                border: 0px
+                background-color: transparent
+                color: inherit
+                text-transform: none
+                transition-timing-function: linear
+                transition-duration: 0.15s
+                transition-property: opacity, filter
+                .hamBox
+                    height: 24px
+                    width: 30px
+                    position: relative
+                    display: inline-block
+                    cursor: pointer
+                    margin-right: 20px
+                    .hamBoxInner
+                        position: absolute
+                        top: 50%
+                        right: 0px
+                        width: 30px
+                        height: 2px
+                        border-radius: 4px
+                        background-color: #EF5F63
+                        transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s
+                        transform: rotate(0deg)
+                        &::before
+                            content: ''
+                            display: block
+                            position: absolute
+                            left: auto
+                            right: 0
+                            height: 2px
+                            border-radius: 4px
+                            background-color: #EF5F63
+                            width: 120%
+                            top: -10px
+                            opacity: 1
+                            transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s
+                            &::after
+                                content: ''
+                                display: block
+                                position: absolute
+                                left: auto
+                                right: 0
+                                height: 2px
+                                border-radius: 4px
+                                background-color: #EF5F63
+                                width: 80%
+                                bottom: -10px
+                                opacity: 1
+                                transform: rotate(0deg)
+                                transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s
+        .sideBar
+            display: flex
+            -webkit-box-pack: center
+            justify-content: center
+            -webkit-box-align: center
+            align-items: center
+            position: fixed
+            top: 0px
+            bottom: 0px
+            right: 0px
+            padding: 50px 10px
+            width: min(75vw, 400px)
+            height: 100vh
+            outline: 0px
+            background-color: #2e2e2e
+            box-shadow: -10px 0px 30px -15px #2e2e2e
+            z-index: 9
+            transform: translateX(100vw)
+            visibility: visible
+            transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1)
+            .menuContent
+                display: flex
+                -webkit-box-pack: justify
+                justify-content: space-between
+                -webkit-box-align: center
+                align-items: center
+                width: 100%
+                flex-direction: column
+                color: #e0e0e0
+                text-align: center
+                span
+                    margin: 20px 0
+                    font-size: clamp(14px, 4vw, 18px)
+                    padding: 3px 20px 20px
+                    width: 100%
+                    cursor: pointer
+
+        .sideBarOpen
+            transform: translateX(0vw)
+        .sideBarClosed
+            transform: translateX(100vw)

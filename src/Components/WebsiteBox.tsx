@@ -1,36 +1,34 @@
-import React, { useState, FC } from "react";
-import circle from '../Assets/images/circle.png';
+import React, { FC } from "react";
+import circle from "../Assets/images/circle.png";
 
 interface WebsiteProps {
-    image: string,
-    link: string,
-    color: string
+  image: string;
+  link: string;
+  color: string;
 }
 
 const WebsiteBox: FC<WebsiteProps> = ({ image, link, color }) => {
-
-    return (
+  return (
+    <div
+      className="websiteBox"
+      style={{
+        backgroundColor: color,
+      }}
+    >
       <div
-        className="websiteBox"
-        style={{
-          backgroundColor: color,
-        }}
+        className="websiteBoxContent"
+        style={{ backgroundImage: `url(${image})` }}
       >
-        <div
-          className="websiteBoxContent"
-          style={{ backgroundImage: `url(${image})` }}
-        >
-          <a
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-            className="siteLink"
-            style={{ backgroundImage: `url(${circle})` }}
-          >
-          </a>
-        </div>
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          className="siteLink"
+          style={{ backgroundImage: `url(${circle})` }}
+        ></a>
       </div>
-    );
-}
+    </div>
+  );
+};
 
 export default WebsiteBox;

@@ -1,13 +1,12 @@
 import React, { useState, FC } from "react";
 
-
 export const NavContext = React.createContext({
   activeNavLinkId: "",
   setActiveNavLinkId: (value: string) => {},
 });
 
 interface navInterface {
-    children: any
+  children: any;
 }
 
 const NavProvider: FC<navInterface> = ({ children }) => {
@@ -24,5 +23,3 @@ const NavProvider: FC<navInterface> = ({ children }) => {
 };
 
 export default NavProvider;
-
-
