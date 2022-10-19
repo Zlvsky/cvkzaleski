@@ -1,3 +1,7 @@
+$md: "(max-width: 1241px)"
+$xs: "(max-width: 890px)"
+
+
 @mixin revealAnimation
     opacity: 0
     animation: revealImage 0.5s ease-in-out forwards
@@ -87,3 +91,39 @@
                     border-radius: 40px
                     margin: 0
                     padding: 0
+
+@media screen and #{$md}
+    #about
+        .sliderContainer
+            padding: 0 20px
+            .slide
+                .slideWrap
+                    align-items: center
+                    .slideRight
+                        width: 300px
+                        height: 300px
+                        img
+                            width: 300px
+                            height: 300px
+
+
+
+@media screen and #{$xs}
+    #about
+        height: auto
+        padding: 30px 0
+        .sliderContainer
+            padding: 0 20px
+            .slide
+                .slideWrap
+                    flex-direction: column
+                    &::after
+                        content: none
+                    .slideLeft
+                        padding: 0
+                    .slideRight
+                        width: 300px
+                        height: 300px
+                        img
+                            width: 300px
+                            height: 300px

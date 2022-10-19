@@ -18,12 +18,16 @@ const AboutSlider = () => {
     {
       title: "about me.",
       shortDescription:
-        "I'm a freelancing web developer that trying to become front-end dev",
-      decription: `For past years I’ve been self learning front-end development
-making websites as a freelancer and now I’m studying Computer Science.
-I would love to work as a front-end developer because i find it to be
-what i really want to do. I’m curious abot the technologies and I’m passionate about 
-front-end development`,
+        "I'm a freelancing web developer that dream about becoming front-end dev",
+      decription: `My first contact with the front end was in 2018,
+ since then I’ve been trying to learn new technologies
+ and expand my knowledge in my spare time.\n
+I believe that the main reason is that front-end development
+ satisfies my need for creativity is that it allows me to easily
+ put my ideas into digital form and see the results. 
+Also I'm really curious about the technologies and
+ fact that there is always something I can do better
+ and learn something new so it keeps me passionatate.`,
       image: book,
     },
     {
@@ -32,16 +36,16 @@ front-end development`,
       decription: `I have graduated a Vocational school with the profile of IT technician.
 I did 2 months internship as a WordPress developer.
 I was hired in this position and worked there for 8 months.
-After that, I worked as a freelancer to create websites based on WordPress and now I'm studying Computer Science`,
+After that, I worked as a freelancer to create websites based on WordPress, meanwhile creating front-end projects for portfolio.
+Additionally, this year I started studying Computer Science`,
       image: analog,
     },
     {
       title: "when I'm offline.",
-      shortDescription: "I'm passionate about IT especially about front-end",
-      decription: `I have graduated a Vocational school with the profile of IT technician.
-I did 2 months internship as a WordPress developer.
-I was hired in this position and worked there for 8 months.
-After that, I worked as a freelancer to create websites based on WordPress and now I'm studying Computer Science`,
+      shortDescription: "To be honest I like many things.",
+      decription: `I enjoy travelling, my dream is to explore as much as my life allows me to. I also do 
+      amateur winemaking. My favorite hobby is analog photography. In addition, sport was never foreign to me, 
+      I trained basketball, skateboarding and I try to be active on gym`,
       image: greece,
     },
   ];

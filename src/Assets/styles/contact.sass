@@ -1,3 +1,5 @@
+$xs: "(max-width: 890px)"
+    
 #contact
     height: 100vh
     overflow: hidden
@@ -41,3 +43,19 @@
                     margin-top: 10px
                     text-decoration: underline
                     color: #151515
+
+
+@media screen and #{$xs}
+    #contact
+        height: auto
+        padding: 70px 0
+        .aboutContent
+            flex-direction: column
+            padding: 0 20px
+            .leftContact
+                width: 100%
+                .contactHeader
+                    font-size: 30px
+            .rightContact
+                width: 100%
+                justify-content: start

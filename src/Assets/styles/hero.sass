@@ -1,3 +1,6 @@
+$md: "(max-width: 1241px)"
+$xs: "(max-width: 890px)"
+
 #hero 
     height: 100vh
     overflow: hidden
@@ -58,3 +61,34 @@
     will-change: opacity, transform
     animation: revealText 1s cubic-bezier(0.7, 0, 0.3, 1) forwards
 
+@media screen and #{$md}
+    #hero
+        .heroMain
+            flex-direction: column
+            justify-content: center
+            #heroContainer
+                width: 100%
+                margin-top: 0px
+                .heroAnimation
+                    h1
+                        font-size: 5rem
+                        span
+                            text-align: center
+                    span
+                        text-align: center
+            #gifContainer
+                
+                img
+                    width: 400px
+
+@media screen and #{$xs}
+    #hero
+        .heroMain
+            #heroContainer
+                .heroAnimation
+                    h1
+                        font-size: 4rem
+                        line-height: 4.7rem
+            #gifContainer
+                img
+                    width: 200px

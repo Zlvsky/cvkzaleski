@@ -1,3 +1,7 @@
+$md: "(max-width: 1080px)"
+$xs: "(max-width: 890px)"
+$xxs: "(max-width: 480px)"
+    
 #projects
     height: auto
     overflow: hidden
@@ -18,7 +22,7 @@
             display: flex
             flex-direction: column
             width: 50%
-            
+            flex-wrap: wrap
             .techTitle 
                 text-align: left
                 color: #dbdbdb
@@ -34,6 +38,7 @@
 
             .techList 
                 display: flex
+                flex-wrap: wrap
 
             .techElement 
                 margin: 10px 10px
@@ -49,6 +54,7 @@
             justify-content: center
             align-items: center
             width: 50%
+            margin-top: 140px
             .techImage
                 object-fit: contain
                 animation: revealImage 0.2s ease-in-out forwards
@@ -205,3 +211,63 @@
                 -webkit-transform: scale(0.2)
                 -ms-transform: scale(0.2)
                 transform: scale(0.2)
+
+@media screen and #{$md}
+    #projects
+        .techWrap
+            .techLeft
+                width: 100%
+                padding: 0 30px
+                .techHeader
+                    text-align: center
+            .techRight
+                display: none
+        .portfolioWrap
+            .techHeader
+                text-align: center
+            .allProjects
+                padding: 0 30px
+    .sectionContent
+        .techHeader
+            text-align: center
+    .websitesWrap
+        .websiteBox
+            width: 33.33%
+
+
+@media screen and #{$xs}
+    #projects
+        .techWrap
+            margin-top: 20px
+            .techRight
+                display: none
+        .portfolioWrap
+            margin-top: 20px
+            .allProjects
+                .singleProjectWrap
+                    .projectImage
+                        grid-column: 1 / -1
+                        opacity: 0.25
+                        height: 100%
+                        img
+                            object-fit: cover
+                            height: 100%
+                            filter: grayscale(100%) contrast(1) brightness(50%)
+                    .projectContent
+                        grid-column: 1 / -1
+                        padding: 40px 40px 30px
+                        text-align: left
+                        z-index: 2
+                        .projectDescriptionWrap
+                            background-color: transparent
+                            box-shadow: none
+                            padding: 0
+    .websitesWrap
+        .websiteBox
+            width: 33.33%
+
+@media screen and #{$xxs}
+    #projects
+        .websitesWrap
+            .websiteBox
+                width: 50%
