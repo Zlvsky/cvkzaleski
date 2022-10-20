@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Assets/styles/about.sass";
 import { useNav } from "../Hooks/useNav";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import book from "../Assets/images/book.jpg";
 import analog from "../Assets/images/analog.jpg";
 import greece from "../Assets/images/greece.jpg";
@@ -98,10 +99,31 @@ Additionally, this year I started studying Computer Science`,
 
 function About() {
   const aboutRef = useNav("About");
+  const revealVariants = {
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: 100 },
+  };
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.4
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
   return (
     <div id="about" ref={aboutRef}>
+      <motion.div
+        ref={ref}
+        variants={revealVariants}
+        animate={controls}
+        initial="hidden"
+      >
       <AboutSlider />
+      </motion.div>
     </div>
   );
 }

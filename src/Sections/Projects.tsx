@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Assets/styles/projects.sass";
 import { useNav } from "../Hooks/useNav";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import js from "../Assets/images/tech/javascript.png";
 import css from "../Assets/images/tech/css.png";
 import davinci from "../Assets/images/tech/davinci.png";
@@ -178,24 +181,38 @@ const Websites = () => {
           image={pmigeodezja}
           link="https://pmigeodezja.pl"
           color="#fff"
+          delay={0}
         />
-        <WebsiteBox image={wbhale} link="https://wbhale.pl" color="#2e2e2e" />
+        <WebsiteBox
+          image={wbhale}
+          link="https://wbhale.pl"
+          color="#2e2e2e"
+          delay={0.1}
+        />
         <WebsiteBox
           image={skrzynkasynka}
           link="https://skrzynkasynka.pl"
           color="#fff"
+          delay={0.2}
         />
         <WebsiteBox
           image={tomaszmichno}
           link="https://tomaszmichno.pl"
           color="#2e2e2e"
+          delay={0.3}
         />
         <WebsiteBox
           image={tukuchnie}
           link="https://tukuchnie.pl"
           color="#fff"
+          delay={0.4}
         />
-        <WebsiteBox image={troc} link="https://iwonatroc.pl" color="#2e2e2e" />
+        <WebsiteBox
+          image={troc}
+          link="https://iwonatroc.pl"
+          color="#2e2e2e"
+          delay={0.5}
+        />
       </div>
     </div>
   );
